@@ -25,10 +25,11 @@ public class TestListExamples {
   public void testFilter() {
     StringChecker sc1 = new StringChecker() {
       public boolean checkString(String s) {
-        return true;
+        return s.equals("b");
       }
     };
     List<String> exampleList = Arrays.asList("a", "b", "c");
-    assertEquals(exampleList, ListExamples.filter(exampleList, sc1));
+    List<String> exampleList1 = Arrays.asList("b");
+    assertEquals(exampleList1, ListExamples.filter(exampleList, sc1));
   }
 }
